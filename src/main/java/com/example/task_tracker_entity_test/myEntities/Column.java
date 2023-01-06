@@ -16,7 +16,7 @@ public class Column {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "column_generator")
     @SequenceGenerator(name = "column_sequence", sequenceName = "column_sequence", allocationSize = 1)
     private Long id;
-    String name;
+    private String name;
     //Board board;
     //List<Card> cards;
 }
