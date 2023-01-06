@@ -1,7 +1,7 @@
 package com.example.task_tracker_entity_test.entities;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

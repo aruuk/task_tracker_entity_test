@@ -1,10 +1,11 @@
 package com.example.task_tracker_entity_test.entities;
 
-import jakarta.persistence.*;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 public class Comment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_gen")
     @SequenceGenerator(name = "comment_seq", sequenceName = "comment_seq", allocationSize = 1)
