@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.persistence.Column;
 
 @Entity
 @Table(name = "checklists")
@@ -17,10 +18,6 @@ public class Checklist {
     @GeneratedValue(generator = "checklist_seq",strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column
+    @Column(length = 50)
     private String title;
-
-    public Checklist(String title) {
-        this.title = title;
-    }
 }

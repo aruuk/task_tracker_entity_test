@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.persistence.Column;
+
 
 @Entity
 @Table(name = "items")
@@ -17,10 +19,10 @@ public class Item {
     @GeneratedValue(generator = "item_seq",strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String text;
 
-    @Column
+    @Column(nullable = false)
     private boolean isDone;
 
     public Item(String text, boolean isDone) {

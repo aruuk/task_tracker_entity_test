@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Archive {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "archive_gen")
     @SequenceGenerator(name = "archive_seq", sequenceName = "archive_seq", allocationSize = 1)

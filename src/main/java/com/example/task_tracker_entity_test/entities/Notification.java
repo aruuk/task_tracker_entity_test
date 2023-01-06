@@ -20,11 +20,7 @@ public class Notification {
     private String text;
     private boolean status;
     private LocalDate dateOfWrite;
-    private User userId;
+//    private User userId;
 
-    public Notification(String text, boolean status, LocalDate dateOfWrite) {
-        this.text = text;
-        this.status = status;
-        this.dateOfWrite = dateOfWrite;
-    }
+
 }

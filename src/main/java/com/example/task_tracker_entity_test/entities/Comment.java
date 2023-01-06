@@ -21,10 +21,6 @@ public class Comment {
     private Long commentId;
     private String text;
     private LocalDate dateOfStart;
-    private User userId;
+//    private User id;
 
-    public Comment(String text, LocalDate dateOfStart) {
-        this.text = text;
-        this.dateOfStart = dateOfStart;
-    }
 }

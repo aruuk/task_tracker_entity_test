@@ -1,4 +1,4 @@
-package com.example.task_tracker_entity_test.myEntities;
+package com.example.task_tracker_entity_test.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

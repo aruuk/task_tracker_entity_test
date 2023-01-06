@@ -1,6 +1,5 @@
 package com.example.task_tracker_entity_test.entities;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,11 +18,9 @@ public class Estimation {
     @GeneratedValue(generator = "estimation_seq",strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateOfStart;
 
-    @Column
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateOfFinish;
 
