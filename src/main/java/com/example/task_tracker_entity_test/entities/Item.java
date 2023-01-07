@@ -8,6 +8,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.persistence.Column;
 
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
+
 
 @Entity
 @Table(name = "items")
@@ -29,4 +32,8 @@ public class Item {
         this.text = text;
         this.isDone = isDone;
     }
+
+    @ManyToOne(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
+    private Checklist checklist;
+
 }

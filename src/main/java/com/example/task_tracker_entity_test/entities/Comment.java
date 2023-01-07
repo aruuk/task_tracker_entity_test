@@ -7,6 +7,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
 
 @Entity
 @Table(name = "comments")
@@ -21,6 +25,18 @@ public class Comment {
     private Long commentId;
     private String text;
     private LocalDate dateOfStart;
-//    private User id;
+
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
+    @JoinTable(name = "users_comments",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "comment_id"))
+    private List<User> users;
+
+
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
+    @JoinTable(name = "cards_comments",
+            joinColumns = @JoinColumn(name = "card_id"),
+            inverseJoinColumns = @JoinColumn(name = "comment_id"))
+    private List<Card> cards;
 
 }

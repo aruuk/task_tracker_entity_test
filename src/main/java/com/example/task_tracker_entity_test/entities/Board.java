@@ -4,8 +4,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import javax.persistence.Column;
+import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.CascadeType.*;
+
 
 @Entity
 @Table(name = "boards")
@@ -23,7 +27,13 @@ public class Board {
     private String imageLink;
     @Column(name = "is_favourite")
     private boolean isFavourite;
-    //Workspace workspace;
-    //List<Column> columns;
-    //Basket basket;
+    @ManyToOne
+    private Workspace workspace;
+    @OneToMany
+    private List<com.example.task_tracker_entity_test.entities.Column> columns;
+    @ManyToOne
+    private Archive archive;
+    @OneToMany(cascade = {DETACH, MERGE, REFRESH}, mappedBy = "board")
+    private List<Notification> notifications;
+
 }

@@ -1,13 +1,16 @@
 package com.example.task_tracker_entity_test.entities;
 
-import javax.persistence.*;
-import javax.persistence.Column;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.LAZY;
+
 
 @Entity
 @Table(name = "archives")
@@ -24,5 +27,11 @@ public class Archive {
     @Column
     private Date deadline;
 
+    @OneToMany
+    private List<Workspace> workspaces;
+    @OneToMany
+    private List<Board> boards;
+    @OneToMany(cascade = {DETACH, MERGE, REFRESH, REMOVE}, fetch = LAZY, mappedBy = "archive")
+    private List<Card> cards;
 
 }

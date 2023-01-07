@@ -1,9 +1,13 @@
 package com.example.task_tracker_entity_test.entities;
 
-import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "roles")
@@ -16,5 +20,9 @@ public class Role {
     @SequenceGenerator(name = "role_seq", sequenceName = "role_seq", allocationSize = 1)
     private Long roleId;
     private String roleName;
+
+    @ManyToMany(targetEntity = User.class, mappedBy = "roles",
+    cascade = {DETACH, MERGE, REFRESH})
+    private List<User> users;
 
 }
