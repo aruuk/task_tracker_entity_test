@@ -24,8 +24,4 @@ public class Estimation {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateOfFinish;
 
-    public Estimation(LocalDate dateOfStart, LocalDate dateOfFinish) {
-        this.dateOfStart = dateOfStart;
-        this.dateOfFinish = dateOfFinish;
-    }
 }

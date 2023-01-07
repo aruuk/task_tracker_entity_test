@@ -26,14 +26,14 @@ public class Comment {
     private String text;
     private LocalDate dateOfStart;
 
-    @ManyToMany(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH})
     @JoinTable(name = "users_comments",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "comment_id"))
     private List<User> users;
 
 
-    @ManyToMany(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH})
     @JoinTable(name = "cards_comments",
             joinColumns = @JoinColumn(name = "card_id"),
             inverseJoinColumns = @JoinColumn(name = "comment_id"))

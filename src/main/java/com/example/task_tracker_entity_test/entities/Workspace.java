@@ -25,7 +25,7 @@ public class Workspace {
     private String name;
     @Column(name = "is_favourite")
     private boolean isFavourite;
-    @ManyToMany(cascade = ALL, fetch = EAGER, mappedBy = "workspaces")
+    @ManyToMany(cascade = ALL, mappedBy = "workspaces")
     private List<User> users;
 
     @OneToMany

@@ -39,13 +39,13 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<Workspace> workspaces;
 
-    @ManyToMany(targetEntity = Role.class, cascade = ALL, fetch = EAGER)
+    @ManyToMany(targetEntity = Role.class, cascade = ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
 
-    @ManyToMany(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH})
     @JoinTable(name = "workspaces_users",
             joinColumns = @JoinColumn(name = "workspace_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))

@@ -18,8 +18,8 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_gen")
     @SequenceGenerator(name = "role_seq", sequenceName = "role_seq", allocationSize = 1)
-    private Long roleId;
-    private String roleName;
+    private Long id;
+    private String name;
 
     @ManyToMany(targetEntity = User.class, mappedBy = "roles",
     cascade = {DETACH, MERGE, REFRESH})
