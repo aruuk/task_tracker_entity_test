@@ -21,7 +21,7 @@ public class Workspace {
     @Column(name = "name", length = 100, nullable = false, unique = true)
     private String name;
     @Column(name = "is_favourite")
-    private boolean isFavourite;
+    private boolean isFavourite = false;
     @ManyToMany
     private List<User> users;
 

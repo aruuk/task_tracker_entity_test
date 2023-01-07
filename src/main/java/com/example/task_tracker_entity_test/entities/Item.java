@@ -23,7 +23,7 @@ public class Item {
     private String text;
 
     @Column(nullable = false)
-    private boolean isDone;
+    private boolean isDone = false;
 
     public Item(String text, boolean isDone) {
         this.text = text;

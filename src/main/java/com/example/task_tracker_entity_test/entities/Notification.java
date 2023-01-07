@@ -1,6 +1,7 @@
 package com.example.task_tracker_entity_test.entities;
 
 import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +21,7 @@ public class Notification {
     @SequenceGenerator(name = "notification_seq", sequenceName = "notification_seq", allocationSize = 1)
     private Long id;
     private String text;
-    private boolean status;
+    private boolean status = false;
     private LocalDate dateOfWrite;
     @ManyToOne
     private User user;
