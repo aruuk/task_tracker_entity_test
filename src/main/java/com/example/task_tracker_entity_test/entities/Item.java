@@ -29,4 +29,8 @@ public class Item {
         this.text = text;
         this.isDone = isDone;
     }
+
+    @ManyToOne
+    private Checklist checklist;
+
 }

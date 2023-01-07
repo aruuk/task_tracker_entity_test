@@ -1,6 +1,6 @@
 package com.example.task_tracker_entity_test.entities;
 
-public enum Color{
+public enum Color {
     GREEN,
     YELLOW,
     ORANGE,

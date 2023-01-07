@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.persistence.Column;
+import java.util.List;
 
 @Entity
 @Table(name = "workspaces")
@@ -21,7 +22,12 @@ public class Workspace {
     private String name;
     @Column(name = "is_favourite")
     private boolean isFavourite;
-    //List<User> users;
-    //List<Board> boards;
-    //Basket basket;
+    @ManyToMany
+    private List<User> users;
+
+    @OneToMany
+    private List<Board> boards;
+
+    @ManyToOne
+    private Archive archive;
 }

@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.persistence.Column;
+import java.util.List;
+
+
 
 @Entity
 @Table(name = "boards")
@@ -23,7 +26,10 @@ public class Board {
     private String imageLink;
     @Column(name = "is_favourite")
     private boolean isFavourite;
-    //Workspace workspace;
-    //List<Column> columns;
-    //Basket basket;
+    @ManyToOne
+    private Workspace workspace;
+    @OneToMany
+    private List<com.example.task_tracker_entity_test.entities.Column> columns;
+    @ManyToOne
+    private Archive archive;
 }

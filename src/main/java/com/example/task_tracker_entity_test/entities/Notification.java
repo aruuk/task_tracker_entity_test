@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+import static javax.persistence.CascadeType.*;
+
 @Entity
 @Table(name = "notifications")
 @Getter
@@ -20,7 +22,7 @@ public class Notification {
     private String text;
     private boolean status;
     private LocalDate dateOfWrite;
-//    private User userId;
-
+    @ManyToOne
+    private User user;
 
 }
