@@ -1,4 +1,4 @@
-package com.example.task_tracker_entity_test.request;
+package com.example.task_tracker_entity_test.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class BoardRequest {
+public class CardRequest {
     private String name;
-    private String imageLink;
 }
