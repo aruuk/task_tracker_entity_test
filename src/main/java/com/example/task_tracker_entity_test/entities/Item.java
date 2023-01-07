@@ -26,7 +26,7 @@ public class Item {
     private String text;
 
     @Column(nullable = false)
-    private boolean isDone;
+    private boolean isDone = false;
 
     @ManyToOne(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
     private Checklist checklist;

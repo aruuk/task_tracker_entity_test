@@ -10,7 +10,6 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.*;
 
-
 @Entity
 @Table(name = "boards")
 @Getter
@@ -26,7 +25,7 @@ public class Board {
     @Column(name = "image_link", length = 10000, nullable = false)
     private String imageLink;
     @Column(name = "is_favourite")
-    private boolean isFavourite;
+    private boolean isFavourite = false;
     @ManyToOne
     private Workspace workspace;
     @OneToMany
