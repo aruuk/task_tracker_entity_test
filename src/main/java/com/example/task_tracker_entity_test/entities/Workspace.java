@@ -23,8 +23,11 @@ public class Workspace {
     private Long id;
     @Column(name = "name", length = 100, nullable = false, unique = true)
     private String name;
+    
     @Column(name = "is_favourite")
-
+    private boolean isFavourite;
+    
+    @ManyToMany(cascade = ALL, mappedBy = "workspaces")
     private List<User> users;
 
     @OneToMany

@@ -28,11 +28,6 @@ public class Item {
     @Column(nullable = false)
     private boolean isDone = false;
 
-    public Item(String text, boolean isDone) {
-        this.text = text;
-        this.isDone = isDone;
-    }
-
     @ManyToOne(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
     private Checklist checklist;
 

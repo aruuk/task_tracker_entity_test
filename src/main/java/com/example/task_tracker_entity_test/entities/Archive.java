@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.Date;
 import javax.persistence.*;
+import javax.persistence.Column;
 import java.util.List;
 
 import static javax.persistence.CascadeType.*;

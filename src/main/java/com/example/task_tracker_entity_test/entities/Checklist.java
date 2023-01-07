@@ -28,6 +28,6 @@ public class Checklist {
     @ManyToOne(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
     private Card card;
 
-    @OneToMany(cascade = {DETACH, MERGE, REFRESH, REMOVE}, fetch = EAGER, mappedBy = "checklist")
+    @OneToMany(cascade = {DETACH, MERGE, REFRESH, REMOVE}, mappedBy = "checklist")
     private List<Item> items;
 }
