@@ -7,6 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
+
 @Entity
 @Table(name = "columns")
 @Getter
@@ -20,7 +23,7 @@ public class Column {
     private String name;
     @ManyToOne
     private Board board;
-    @OneToMany
+    @OneToMany(cascade = {DETACH, MERGE, REFRESH, REMOVE}, fetch = EAGER, mappedBy = "column")
     private List<Card> cards;
 
     @OneToMany

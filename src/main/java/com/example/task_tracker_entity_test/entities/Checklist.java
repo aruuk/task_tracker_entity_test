@@ -7,6 +7,10 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
 
 @Entity
 @Table(name = "checklists")
@@ -21,6 +25,9 @@ public class Checklist {
     @Column(length = 50)
     private String title;
 
-    @ManyToOne
+    @ManyToOne(cascade = {DETACH, MERGE, REFRESH}, fetch = EAGER)
     private Card card;
+
+    @OneToMany(cascade = {DETACH, MERGE, REFRESH, REMOVE}, fetch = EAGER, mappedBy = "checklist")
+    private List<Item> items;
 }

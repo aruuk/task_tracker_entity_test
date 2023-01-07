@@ -7,6 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
 @Table(name = "archives")
 @Getter
@@ -22,7 +25,7 @@ public class Archive {
     private List<Workspace> workspaces;
     @OneToMany
     private List<Board> boards;
-    @OneToMany
+    @OneToMany(cascade = {DETACH, MERGE, REFRESH, REMOVE}, fetch = LAZY, mappedBy = "archive")
     private List<Card> cards;
 
 }
