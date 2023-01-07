@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "columns")
@@ -17,6 +18,12 @@ public class Column {
     @SequenceGenerator(name = "column_sequence", sequenceName = "column_sequence", allocationSize = 1)
     private Long id;
     private String name;
-    //Board board;
-    //List<Card> cards;
+    @ManyToOne
+    private Board board;
+    @OneToMany
+    private List<Card> cards;
+
+    @OneToMany
+    private List<Item> items;
+
 }

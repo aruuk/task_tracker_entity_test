@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "labels")
@@ -19,5 +19,8 @@ public class Label {
     private Long id;
     @Column(name = "text", length = 10000, nullable = false, unique = true)
     private String text;
-    //(Enum)->Color color;
+
+    @Enumerated(EnumType.STRING)
+    private Color color;
+
 }
